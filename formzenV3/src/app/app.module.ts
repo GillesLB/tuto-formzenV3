@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProductComponent } from './product/product.component';
+import { ProductService } from 'src/app/service/product.service';
+import { CustomerService } from 'src/app/service/customer.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,12 @@ import { ProductComponent } from './product/product.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    ProductService,
+    CustomerService,
+    // utilisé en parallède du @Inject()
+    {provide: 'welcomeMsg', useValue: 'Bienvenue sur ce site !!'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

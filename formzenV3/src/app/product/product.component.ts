@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Product } from 'src/app/modele/product';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-product',
@@ -13,13 +14,19 @@ export class ProductComponent implements OnInit {
 
   @Output() addToBasket = new EventEmitter<Product>();
 
-  constructor() { }
+  constructor(
+    private productService: ProductService,
+  ) { }
 
   ngOnInit() {
   }
 
   addToBasketClick() {
     this.addToBasket.emit(this.data);
+  }
+
+  isTheLast() {
+    return this.productService.isTheLast(this.data);
   }
 
 }

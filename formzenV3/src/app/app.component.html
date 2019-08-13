@@ -3,8 +3,8 @@
 <div class="container">
 
   <header class="jumbotron hero-spacer">
-    <h1>Bienvenue sur Zenika Ecommerce</h1>
-    <p>Votre panier s'élève à {{total}} €</p>
+    <h1>{{title}}</h1>
+    <p>Votre panier s'élève à {{getTotal()}} €</p>
     <p><a class="btn btn-primary btn-large">Voir mon panier</a></p>
   </header>
 
@@ -18,7 +18,7 @@
 
   <div class="row text-center">
     <div *ngFor="let product of products" class="col-3">
-      <span *ngIf="product.stock > 0">
+      <span *ngIf="isAvaible(product)">
         <app-product [data]="product" (addToBasket)="updatePrice($event)"></app-product>
       </span>
     </div>
