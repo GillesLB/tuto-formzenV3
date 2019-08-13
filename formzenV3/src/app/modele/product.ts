@@ -3,6 +3,7 @@ export interface IProduct {
     description: string;
     photo: string;
     price: number;
+    stock: number;
 }
 
 export class Product implements IProduct {
@@ -11,7 +12,8 @@ export class Product implements IProduct {
         public title: string,
         public description: string,
         public photo: string,
-        public price: number
+        public price: number,
+        public stock: number
     ) {}
 
 }

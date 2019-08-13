@@ -16,17 +16,20 @@
     </div>
   </div>
 
-  <div class="text-center">
-    <app-product [data]="products[0]" (addToBasket)="updatePrice($event)"></app-product>
-    <app-product [data]="products[1]" (addToBasket)="updatePrice($event)"></app-product>
-    <app-product [data]="products[2]" (addToBasket)="updatePrice($event)"></app-product>
-    <app-product [data]="products[3]" (addToBasket)="updatePrice($event)"></app-product>
+  <div class="row text-center">
+    <div *ngFor="let product of products" class="col-3">
+      <span *ngIf="product.stock > 0">
+        <app-product [data]="product" (addToBasket)="updatePrice($event)"></app-product>
+      </span>
+    </div>
   </div>
 
   <hr>
 
-  <footer>
-    Copyright &copy; Your Website 2016
-  </footer>
+  <div class=row>
+    <footer class="col-12">
+      Copyright &copy; Your Website 2016
+    </footer>
+  </div>
 
 </div>

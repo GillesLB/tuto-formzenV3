@@ -1,9 +1,10 @@
-<div class="col-md-3 col-sm-6 product-item">
-  <div class="thumbnail">
+<div class="product-item">
+  <div class="thumbnail" [ngClass]="{last: data.stock === 1}">
     <img [src]="data.photo" alt="">
     <div class="caption">
-      <h3>{{data.title}} - {{data.price}}€</h3>
+      <h3>{{data.title}} - {{data.price}} €</h3>
       <p>{{data.description}}</p>
+      <h4>Reste en stock : {{data.stock}}</h4>
       <p>
         <button 
           class="btn btn-primary"
