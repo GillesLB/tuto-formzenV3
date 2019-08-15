@@ -13,7 +13,7 @@ export class ProductService {
     // tslint:disable-next-line: max-line-length
     {title: 'Tee-Shirt homme', description: 'TEE-SHIRT BIO À COL ROND - HOMME', photo: 'https://s3.eu-central-1.amazonaws.com/balibart-s3/Products/5b2911e4ab33424aec592bd6/Mockups/front.png', price: 19, stock: 7},
     // tslint:disable-next-line: max-line-length
-    {title: 'Tee-Shirt femme', description: 'TEE-SHIRT BIO À COL ROND - FEMME', photo: 'https://s3.eu-central-1.amazonaws.com/balibart-s3/Products/5b290d26ab33424aec592bd4/Mockups/front.png', price: 19, stock: 3},
+    {title: 'A Tee-Shirt femme', description: 'TEE-SHIRT BIO À COL ROND - FEMME', photo: 'https://s3.eu-central-1.amazonaws.com/balibart-s3/Products/5b290d26ab33424aec592bd4/Mockups/front.png', price: 22, stock: 3},
     // tslint:disable-next-line: max-line-length
     {title: 'Tote bag', description: '<C0D1NG_TH3_W0RLD>, TOTE BAG BIO.', photo: 'https://s3.eu-central-1.amazonaws.com/balibart-s3/Products/5acf160814006a7fe670e2dd/Mockups/front.png', price: 12.5, stock: 5}
   ];

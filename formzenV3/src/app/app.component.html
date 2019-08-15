@@ -4,8 +4,26 @@
 
   <header class="jumbotron hero-spacer">
     <h1>{{title}}</h1>
-    <p>Votre panier s'élève à {{getTotal()}} €</p>
+    <p>Votre panier s'élève à {{getTotal() | currency: 'EUR': 'symbol': '2.2-2': 'fr'}}</p>
     <p><a class="btn btn-primary btn-large">Voir mon panier</a></p>
+    <button
+      class="btn btn-warning"
+      (click)="facteur='price'"
+    >
+      Tri par prix
+    </button>
+    <button
+    class="btn btn-warning ml-2"
+    (click)="facteur='stock'"
+  >
+    Tri par stock
+  </button>
+  <button
+  class="btn btn-warning ml-2"
+  (click)="facteur='title'"
+>
+  Tri par nom
+</button>
   </header>
 
   <hr>
@@ -17,7 +35,7 @@
   </div>
 
   <div class="row text-center">
-    <div *ngFor="let product of products" class="col-3">
+    <div *ngFor="let product of products | tri: facteur" class="col-3">
       <span *ngIf="isAvaible(product)">
         <app-product [data]="product" (addToBasket)="updatePrice($event)"></app-product>
       </span>

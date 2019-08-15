@@ -7,12 +7,19 @@ import { MenuComponent } from './menu/menu.component';
 import { ProductComponent } from './product/product.component';
 import { ProductService } from 'src/app/service/product.service';
 import { CustomerService } from 'src/app/service/customer.service';
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import { TriPipe } from './pipe/tri.pipe';
+
+registerLocaleData(localeFr);
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    ProductComponent
+    ProductComponent,
+    TriPipe
   ],
   imports: [
     BrowserModule,
@@ -22,7 +29,9 @@ import { CustomerService } from 'src/app/service/customer.service';
     ProductService,
     CustomerService,
     // utilisé en parallède du @Inject()
-    {provide: 'welcomeMsg', useValue: 'Bienvenue sur ce site !!'}
+    {provide: 'welcomeMsg', useValue: 'Bienvenue sur ce site !!'},
+    // pour avoir le symbole € à la fin
+    {provide: LOCALE_ID, useValue: navigator.language},
   ],
   bootstrap: [AppComponent]
 })

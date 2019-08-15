@@ -2,7 +2,7 @@
   <div class="thumbnail" [ngClass]="{last: isTheLast()}">
     <img [src]="data.photo" alt="">
     <div class="caption">
-      <h3>{{data.title}} - {{data.price}} €</h3>
+      <h3>{{data.title | uppercase}} - {{data.price | currency: 'EUR': 'symbol': '2.2-2': 'fr'}}</h3>
       <p>{{data.description}}</p>
       <h4>Reste en stock : {{data.stock}}</h4>
       <p>
