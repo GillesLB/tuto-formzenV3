@@ -11,6 +11,8 @@ import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { TriPipe } from './pipe/tri.pipe';
+import { HomeComponent } from './home/home.component';
+import { BasketComponent } from './basket/basket.component';
 
 registerLocaleData(localeFr);
 
@@ -19,7 +21,9 @@ registerLocaleData(localeFr);
     AppComponent,
     MenuComponent,
     ProductComponent,
-    TriPipe
+    TriPipe,
+    HomeComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,
