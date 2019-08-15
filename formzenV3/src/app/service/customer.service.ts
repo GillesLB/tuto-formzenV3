@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Product } from 'src/app/modele/product';
 
+import { FormGroup } from '@angular/forms';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,6 +12,8 @@ export class CustomerService {
   total = 0;
 
   products: Product[] = [];
+
+  customerForm: FormGroup;
 
   constructor() { }
 
